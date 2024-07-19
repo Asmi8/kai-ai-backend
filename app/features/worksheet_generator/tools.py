@@ -372,6 +372,42 @@ class MultiChoiceQuestion(BaseModel):
         }
 
       }
+
+      model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "Which of the following is used to define a block of code in Python?",
+                "choices": [
+                    {"key": "A", "value": "Curly braces"},
+                    {"key": "B", "value": "Square brackets"},
+                    {"key": "C", "value": "Indentation"},
+                    {"key": "D", "value": "Parentheses"}
+                ],
+                "answer": "C",
+              }
+          """
+        }
+
+      }
+
+      model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "Which of the following data types is immutable in Python?",
+                "choices": [
+                    {"key": "A", "value": "List"},
+                    {"key": "B", "value": "Dictionary"},
+                    {"key": "C", "value": "Set"},
+                    {"key": "D", "value": "Tuple"}
+                ],
+                "answer": "D",
+              }
+          """
+        }
+
+      }
     
 class FillInBlankQuestion(BaseModel):
     question: str = Field(description="The question text with the blank to be filled")
@@ -388,6 +424,32 @@ class FillInBlankQuestion(BaseModel):
         }
 
     }
+    
+    model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "The data structure that follows the Last In, First Out (LIFO) principle is called a ___________.
+",
+                "answer": "Stack",
+                }
+            """
+        }
+
+    }
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "In a binary tree, the topmost node is known as the ___________ node."
+                "answer": "Root",
+                }
+            """
+        }
+
+    }
+
         
 class OpenEndedQuestion(BaseModel):
     question: str = Field(description="The open ended question text")
@@ -399,6 +461,31 @@ class OpenEndedQuestion(BaseModel):
                 {
                 "question": "What are the main causes of climate change, and how do they impact the environment?",
                 "answer": "The main causes of climate change are the burning of fossil fuels and deforestation, which release large amounts of carbon dioxide and other greenhouse gases into the atmosphere. These activities lead to global warming, resulting in severe weather events, rising sea levels, and disruptions to ecosystems.",
+                }
+            """
+        }
+
+    }
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "State Newton's First law of motion?",
+                "answer": "An object at rest will remain at rest,and an object in motion will remain in motion unless acted upon by a net external force."
+                }
+            """
+        }
+
+    }
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": """ 
+                {
+                "question": "Explain how mass and acceleration are related to force",
+                "answer": "Force (F) is directly proportional to acceleration (a) and inversely proportional to mass(m) as desribed by newton's second law: F = ma
+                This law quantitatively relates how the force applied to an object affects its acceleration, considering its mass."
                 }
             """
         }
